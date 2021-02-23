@@ -1,5 +1,6 @@
 # MuckScraper
 MuckScraper Version 1.0 (Pending Distribution) 02.22.2021
+------------------------
 GENERAL USAGE NOTES
 ------------------------
 MuckScraper is a web application in development that will allow users to archive articles from the web for later reading and will promote news consumer literacy by compiling statistics of user reading habits and making user's aware of these habits.
