@@ -1,0 +1,9 @@
+Use Cases:
+
+Given a news article, the application will parse the article separating HTML from plain text. When complete, the article will then be made available for viewing outside of the parent website.
+
+Given a news article, the application will be able to intelligently identify key attributes to store as persistent data points that will be used to reveal user reading habits.
+
+Given a user, the application will be able to display an individualized profile, article queue, and statistics page based on user activity.
+
+Given a user, the article will need to require user to log in to access profile.
