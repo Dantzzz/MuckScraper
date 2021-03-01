@@ -16,6 +16,7 @@ Requirements:
 		2.2.1 The system shall display user data in its most recent state.
 			2.2.1.1 The system shall provide means to update program with an accurate view of the current state of data in the database.
 		2.2.2 The system shall make calculations on user data that reflect the user's habits and display these figures to the user.
+		
 3. The system shall include functionality that emphasizes a journalist's credentials.
 	3.1 The system will recognize journalists by name and display a wiki for the user to learn more about the journalist's background and reputation.
 		3.1.1 The system will extrapolate the author's name while parsing through an article's contents.
