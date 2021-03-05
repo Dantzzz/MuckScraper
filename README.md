@@ -11,16 +11,27 @@
 6. [Requirements](#reqs)
 7. [Entity Relationship Diagram (Preliminary)](#erdrgm)
 8. [Wireframe (Tentative Sketches)](#sketches)
+9. [Technical Support Contact](#techsupport)
 
 <a name="explanation"></a>
 ## What is MuckScraper?
 
-*MuckScraper is a web application in development that will allow users to archive articles from the web for later reading and will promote news consumer literacy by compiling statistics of user reading habits and notifying them of identified patterns.*
+*MuckScraper is a web application in development that will allow users to archive articles from the web for later reading and will promote news consumer literacy by compiling statistics of user reading habits and notifying them of identified patterns.* [Return](#toc)
 
 <a name="ms"></a>
+# Why the name?
 The name is a portmanteu of two terms: *"Muckraker"*, which is a term used to identify the revolutionary journalists of the Progressive Era that devoted their careers to shining a light on corruption, and *"Web scrape"*, which is the technique of sifting through a webpage and intelligently collecting useful data. 
 
-The term "muckraker", as it is used today, characterizes journalists whose devotion to the field transcends any perceived limitations. It is used to portray journalists who do the job with an unrelenting effort. These journalists' careers are so often overshadowed by the reputation of the publication that employs them, and, in today's polarized news world, this often mischaracterizes their work. This spawned the idea of creating an application that underscores journalist's reputations rather than the publications they write for. This warrants pulling, or scraping, applicable data from news articles to build in this capability, thus, MuckScraper seemed a like fitting title.
+The term "muckraker", as it is used today, characterizes journalists whose devotion to the field transcends any perceived limitations. It is used to portray journalists who do the job with an unrelenting effort. These journalists' careers are so often overshadowed by the reputation of the publication that employs them, and, in today's polarized news world, this often mischaracterizes their work. This spawned the idea of creating an application that underscores journalist's reputations rather than the publications they write for. This warrants pulling, or scraping, applicable data from news articles to build in this capability, thus, MuckScraper seemed a like fitting title. [Return](#toc)
+
+<a name="stories"></a>
+# User Stories
+
+As a newpaper reader, I want an application that allows me to download articles for later viewing.
+
+As a consumer, I want to see statistics that make me aware of my reading habits.
+
+As a journalist, I need an application that emphasizes a journalist's reputation. [Return](#toc)
 
 
 
@@ -41,6 +52,7 @@ The term "muckraker", as it is used today, characterizes journalists whose devot
 - Intended to run on any browser in a desktop environment. 
 - Only available as web application in early stages. No installation required.
 
+<a name="techsupport"></a>
 For questions, reporting bugs, or general technical support, please contact me at...
 -----------------------
 Email: dantz.farrow1@outlook.com
