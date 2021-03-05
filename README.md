@@ -62,6 +62,8 @@ Given a user, the article will need to require user to log in to access profile.
 
 [Return](#toc)
 
+
+<a name="reqs"></a>
 # Requirements:
 
 1. The system shall download an alias of the article that is presented for later view.
@@ -90,23 +92,23 @@ Given a user, the article will need to require user to log in to access profile.
 
 [Return](#toc)
 
+<a name="erdrgm"></a>
+## Entity Relationship Diagram
 
+![image](https://user-images.githubusercontent.com/21690878/110076177-e8a99300-7d38-11eb-929d-6f70891f4adf.png)
 
+[Return](#toc)
 
+<a name="sketches"></a>
+## Wireframe (Tentative Sketches)
 
+(Not Yet Implemented)
 
-
-
-
-
-
-
-
-
-
-
+[Return](#toc)
 
 <a name="techsupport"></a>
 For questions, reporting bugs, or general technical support, please contact me at...
 -----------------------
 Email: dantz.farrow1@outlook.com
+
+[Return](#toc)
