@@ -92,7 +92,7 @@ Given a user, the article will need to require user to log in to access profile.
     2. The system will keep record of a user's history of authors and notify them when a future uploaded article contains similarities.
 
 <a name="reqspec"></a>
-### Requirements Specification
+## Requirements Specification
 
 |Req ID|Requirement|Test Method|
 |----|----------------------------|--------------|
