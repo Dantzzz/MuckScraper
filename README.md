@@ -58,7 +58,7 @@ Given a user, the article will need to require user to log in to access profile.
 <a name="ucdgrm"></a>
 ## Use-Case Diagram 
 
-![image](https://user-images.githubusercontent.com/21690878/110075094-21486d00-7d37-11eb-91cf-294a615be559.png)
+![UML_MS](https://user-images.githubusercontent.com/21690878/110140615-21715880-7d89-11eb-8296-ce5001b127fc.png)
 
 [Return](#toc)
 
@@ -95,7 +95,7 @@ Given a user, the article will need to require user to log in to access profile.
 <a name="erdrgm"></a>
 ## Entity Relationship Diagram
 
-![image](https://user-images.githubusercontent.com/21690878/110076177-e8a99300-7d38-11eb-929d-6f70891f4adf.png)
+![ERD](https://user-images.githubusercontent.com/21690878/110140445-f4bd4100-7d88-11eb-99fb-6b1479b8bf3d.jpg)
 
 [Return](#toc)
 
