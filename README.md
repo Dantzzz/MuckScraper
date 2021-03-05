@@ -7,15 +7,16 @@
 <a name="toc"></a>
 ## Table of Contents
 1. [What is MuckScraper?](#explanation)
-2. [The Name](#ms)
+2. [Why the Name?](#ms)
 3. [User Stories](#stories)
 4. [Use Cases](#ucase)
 5. [Use-Case Diagram](#ucdgrm)
 6. [Requirements](#reqs)
 7. [Requirements Specification Table](#reqspec)
-8. [Entity Relationship Diagram (Preliminary)](#erdrgm)
-9. [Wireframe (Tentative Sketches)](#sketches)
-10. [Technical Support Contact](#techsupport)
+8. [Testing](#tst)
+9. [Entity Relationship Diagram (Preliminary)](#erdrgm)
+10. [Wireframe (Tentative Sketches)](#sketches)
+11. [Technical Support Contact](#techsupport)
 
 <a name="explanation"></a>
 # What is MuckScraper?
@@ -70,7 +71,7 @@ Given a user, the article will need to require user to log in to access profile.
 1. The system shall download an alias of the article that is presented for later view.
     1. The system shall accept a news article as input and copy its text intelligently into a neatly formatted file held in storage.
         1. The system shall employ web scraping functionality that will allow it to parse a webpage and identify key elements that distinguish text from html.
-        2. The sysem shall strip away extraneous html tags, salvaging only pertinent material from webpage.
+        2. The system shall strip away extraneous html tags, salvaging only pertinent material from webpage.
         3. The system shall store saved text into a new file saved to the user's account.
     2. The system shall offer a user-friendly interface for viewing article aliases that have been saved.
 
@@ -95,11 +96,11 @@ Given a user, the article will need to require user to log in to access profile.
 ## Requirements Specification
 
 |Req ID|Requirement|Test Method|
-|----|----------------------------|--------------|
+|----|------------------------|---------|
 |1.| The system shall download an alias of the article that is presented for later view.| test |
 |1.i.| The system shall accept a news article as input and copy its text intelligently into a neatly formatted file held in storage.| test |
 |1.i.a.| The system shall employ web scraping functionality that will allow it to parse a webpage and identify key elements that distinguish text from html.| demonstrate |
-|1.i.b.| The sysem shall strip away extraneous html tags, salvaging only pertinent material from webpage.| demonstrate |
+|1.i.b.| The system shall strip away extraneous html tags, salvaging only pertinent material from webpage.| demonstrate |
 |1.i.c.| The system shall store saved text into a new file saved to the user's account. | test |
 |1.ii| The system shall offer a user-friendly interface for viewing article aliases that have been saved. | demonstrate |
 |2.| The system shall monitor user habits.| demonstrate |
@@ -117,6 +118,16 @@ Given a user, the article will need to require user to log in to access profile.
 |3.i.b.| The system will utilize an API to search for the author and return a short wiki.| demonstrate |
 |3.i.c.| The system will provide a link in the wiki that enables user's to further research the author via a new browser tab linked to an outside source.| demonstrate |
 |3.ii.| The system will keep record of a user's history of authors and notify them when a future uploaded article contains similarities.| test |
+
+
+<a name="tst"></a>
+## Testing
+|TestID|Req ID|Test Process|Status|
+|----|----|-------------|------------|
+|001|1.|View article autonomous of source.| not tested |
+|002|1.i.| Plug in article and view output. Output must be separate from source and remain somewhat true to original styling.| not tested |
+|003|1.i.a, b, & c| Appropriate HTML tags interpretted and stripped from plain text output and stored in separate file. | not tested |
+|004|1.ii.| Allow audience to demo UI to determine if application is visually stimulating.| not tested |
 
 [Back To Top](#toc)
 
