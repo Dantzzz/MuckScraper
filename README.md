@@ -122,12 +122,12 @@ Given a user, the article will need to require user to log in to access profile.
 
 <a name="tst"></a>
 ## Testing
-|TestID|Req ID|Test Process|Status|
-|----|----|-------------|------------|
+|TestID|Req ID|Test Process|Status|Timestamp|Build/Version|
+|----|----|-------------|------------|-------|----------|
 |001|1.|View article autonomous of source.| not tested |
-|002|1.i.| Plug in article and view output. Output must be separate from source and remain somewhat true to original styling.| not tested |
-|003|1.i.a, b, & c| Appropriate HTML tags interpretted and stripped from plain text output and stored in separate file. | not tested |
-|004|1.ii.| Allow audience to demo UI to determine if application is visually stimulating.| not tested |
+|002|1.i.| Plug in article and view output. Output must be separate from source and remain somewhat true to original styling.| not tested |||
+|003|1.i.a, b, & c| Appropriate HTML tags interpretted and stripped from plain text output and stored in separate file. | not tested |||
+|004|1.ii.| Allow audience to demo UI to determine if application is visually stimulating.| not tested |||
 
 [Back To Top](#toc)
 
