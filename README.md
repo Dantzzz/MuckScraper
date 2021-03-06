@@ -11,7 +11,7 @@
 3. [User Stories](#stories)
 4. [Use Cases](#ucase)
 5. [Use-Case Diagram](#ucdgrm)
-6. [Requirements](#reqs)
+6. [Requirements Hierarchy](#reqs)
 7. [Requirements Specification Table](#reqspec)
 8. [Testing](#tst)
 9. [Entity Relationship Diagram (Preliminary)](#erdrgm)
@@ -66,7 +66,7 @@ Given a user, the article will need to require user to log in to access profile.
 
 
 <a name="reqs"></a>
-# Requirements:
+# Requirements Hierarchy:
 
 1. The system shall download an alias of the article that is presented for later view.
     1. The system shall accept a news article as input and copy its text intelligently into a neatly formatted file held in storage.
