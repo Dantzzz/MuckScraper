@@ -103,7 +103,7 @@ Given a user, the article will need to require user to log in to access profile.
 |1.i.b.| The system shall strip away extraneous html tags, salvaging only pertinent material from webpage.| demonstrate |
 |1.i.c.| The system shall store saved text into a new file saved to the user's account. | test |
 |1.ii| The system shall offer a user-friendly interface for viewing article aliases that have been saved. | demonstrate |
-|2.| The system shall monitor user habits.| demonstrate |
+|2.| The system shall monitor user habits.| analysis |
 |2.i| The system shall also intelligently identify certain aspects in a news article and keep track of its history in a historical database.| test |
 |2.i.a|The system shall extrapolate key characteristics of a news article, such as author, publication, and date, and log instances of this data in a database.| test |
 |2.i.b.| The system shall update database with new values and recognize values that have already been seen by comparing it to other values in the database.| test |
