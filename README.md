@@ -139,9 +139,8 @@ Given a user, the article will need to require user to log in to access profile.
 [Back To Top](#toc)
 
 <a name="sketches"></a>
-## Wireframe (Tentative Sketches)
-
-(Not Yet Implemented)
+## Prototype
+![Follow this link to check out the first draft of my prototype...](https://github.com/Dantzzz/MuckScraper/blob/main/MS%20Prototype.pdf) 
 
 [Back To Top](#toc)
 
