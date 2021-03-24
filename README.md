@@ -27,7 +27,7 @@
 
 <a name="ms"></a>
 ## Why the name?
-The name is a portmanteu of two terms: *"Muckraker"*, which is a term used to identify the revolutionary journalists of the Progressive Era that devoted their careers to shining a light on corruption, and *"Web scrape"*, which is the technique of sifting through a webpage and intelligently collecting useful data. 
+The name is a portmanteu of two terms: *"Muckraker"*, which is a term used to identify the revolutionary journalists of the Progressive Era that devoted their careers to shining a light on corruption, and *"Web scrape"*, which is a technique for sifting through a webpage and intelligently extracting and collecting useful data. 
 
 The term "muckraker", as it is used today, characterizes journalists whose devotion to the field transcends any perceived limitations. It is used to portray journalists who do the job with unrelenting effort. These journalists' careers are so often overshadowed by the reputation of the publication that employs them, and, in today's polarized news world, this often mischaracterizes their work. This spawned the idea of creating an application that underscores journalist's reputations rather than the publications they write for. This warrants pulling, or scraping, applicable data from news articles to build in this capability, thus, MuckScraper seemed a like fitting title. 
 
