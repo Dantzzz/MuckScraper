@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using MuckScraperMVCApp.Data;
 
 namespace MuckScraperMVCApp
 {
@@ -24,6 +26,10 @@ namespace MuckScraperMVCApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<MuckScraperContext>(opts => {
+                opts.UseSqlServer(
+                Configuration["ConnectionStrings:MuckScraperConnectionString"]);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
