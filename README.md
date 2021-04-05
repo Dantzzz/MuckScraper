@@ -15,8 +15,9 @@
 7. [Requirements Specification Table](#reqspec)
 8. [Testing](#tst)
 9. [Entity Relationship Diagram (Preliminary)](#erdrgm)
-10. [Prototype (First Draft)](#sketches)
-11. [Technical Support Contact](#techsupport)
+10. [Database Diagram](#dbdgrm)
+11. [Prototype (First Draft)](#sketches)
+12. [Technical Support Contact](#techsupport)
 
 <a name="explanation"></a>
 # What is MuckScraper?
@@ -138,6 +139,13 @@ Given a user, the article will need to require user to log in to access profile.
 
 [Back To Top](#toc)
 
+
+<a name="dbdrgm"></a>
+## Database Diagram
+
+![DbDiagram](MuckScraperDbDatabaseDiagram.JPG)
+
+[Back To Top](#toc)
 <a name="sketches"></a>
 ## Prototype (First Draft)
 ![Follow this link to check out the first draft of my prototype...](https://github.com/Dantzzz/MuckScraper/blob/main/MS%20Prototype.pdf) 
