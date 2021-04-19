@@ -3,10 +3,10 @@ using System.Linq;
 
 namespace MuckScraperMVCApp
 {
-    public interface IMuckScraperRepository
+    public interface IArticleRepository
     {
         IQueryable<Article> Articles { get; }
-        IQueryable<Profile> Profiles { get; }
-        IQueryable<User> Users { get; }
+        void SaveArticle(Article article);
+        public Article GetArticle(int id);
     }
 }

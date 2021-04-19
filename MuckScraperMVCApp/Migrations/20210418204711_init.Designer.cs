@@ -10,22 +10,23 @@ using MuckScraperMVCApp.Data;
 namespace MuckScraperMVCApp.Migrations
 {
     [DbContext(typeof(MuckScraperContext))]
-    [Migration("20210405063634_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210418204711_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
+                .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("MuckScraperMVCApp.Models.Article", b =>
                 {
-                    b.Property<Guid>("ArticleId")
+                    b.Property<int>("ArticleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AuthorFirstName")
                         .HasColumnType("nvarchar(max)");

@@ -6,10 +6,10 @@ namespace MuckScraperMVCApp.Models
     public class Article
     {
         [Key]
-        public Guid ArticleId { get; set; }
+        public int ArticleId { get; set; }
+
         [Required]
         [StringLength(100)]
-
         public string Title { get; set; }
 
         public string SourceMedium { get; set; }

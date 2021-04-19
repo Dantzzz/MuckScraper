@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuckScraperMVCApp", "MuckScraperMVCApp.csproj", "{EB374B73-67C9-424B-9FBF-1AC6C1D30473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuckScraperTests", "..\MuckScraperTests\MuckScraperTests.csproj", "{2C4FC1B2-CFD2-42B6-B323-59C9071E5B63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuckScraperTests", "..\MuckScraperTests\MuckScraperTests.csproj", "{2C4FC1B2-CFD2-42B6-B323-59C9071E5B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

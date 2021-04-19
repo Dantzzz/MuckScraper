@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MuckScraperMVCApp.Data;
+using MuckScraperMVCApp.Models;
 
 namespace MuckScraperMVCApp
 {
@@ -30,6 +31,7 @@ namespace MuckScraperMVCApp
                 opts.UseSqlServer(
                 Configuration["ConnectionStrings:MuckScraperConnectionString"]);
             });
+            services.AddScoped<IArticleRepository, EFMuckScraperRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +60,7 @@ namespace MuckScraperMVCApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            //SeedData.EnsurePopulated(app);
         }
     }
 }
