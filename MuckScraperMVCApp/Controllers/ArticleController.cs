@@ -25,7 +25,7 @@ namespace MuckScraperMVCApp.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveArticle(article);
-                return RedirectToPage("/Completed", article);
+                return View("Completed", article);
             }
             else
             {
@@ -33,9 +33,10 @@ namespace MuckScraperMVCApp.Controllers
             }
         }
 
-        public ViewResult Completed(Article article)
+        public IActionResult Completed(Article article)
         {
-            return View();
+            Article createdArticle = repository.GetArticle(article.ArticleId);
+            return View(article);
         }
     }
 }

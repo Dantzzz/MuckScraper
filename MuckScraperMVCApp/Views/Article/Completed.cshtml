@@ -5,8 +5,15 @@
         <component @Model.AuthorFirstName + @Model.AuthorLastName class="arrow" />
         <component @Model.PublicationName class="arrow" />
         <component @Model.PublishDate class="arrow" />
+
     </ul>
 </div>
 <h2>Complete!</h2>
+<h2>@Model.Title</h2>
+<h2>@Model.AuthorFirstName</h2>
+<h2>@Model.AuthorLastName</h2>
+<h2>@Model.PublicationName</h2>
+<h2>@Model.PublishDate</h2>
+
 <a class="btn btn-primary" asp-controller="My Archive">Archive</a>
 <a class="btn btn-primary" asp-controller="Home">Home</a>
