@@ -1,13 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<body class="mainmenubkgrnd" "footer">
+<body class="mainmenubkgrnd">
+    <container>
 
+    </container>
+
+    <container>
+        <div class="text-center">
+            <img src="~/img/RDLogo.png" height="300"/>
+            <br />
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Article" asp-action="Upload">Upload</a>
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Article" asp-action="Upload">Read</a>
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Article" asp-action="Upload">Stats</a>
+        </div>
+    </container>
 </body>
+
+
     
-
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
