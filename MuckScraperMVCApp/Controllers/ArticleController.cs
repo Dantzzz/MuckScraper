@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MuckScraperMVCApp.Models;
 using System.Net.Http;
+using System.Text.Json;
+using MuckScraperMVCApp.Data;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -42,7 +44,7 @@ namespace MuckScraperMVCApp.Controllers
             return View(createdArticle);
         }
 
-        public async Task GetArticle(string urlString)
+        public async Task<ArticleJson> GetArticle(string urlString)
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -55,12 +57,16 @@ namespace MuckScraperMVCApp.Controllers
                     { "x-rapidapi-host", "news-parser1.p.rapidapi.com" },
                 },
             };
+            ArticleJson articleJson = new ArticleJson();
             using (var response = await client.SendAsync(request))
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(body);
+
+                articleJson = JsonSerializer.Deserialize<ArticleJson>(body);
             }
+            return articleJson;
         }
     }
 }
