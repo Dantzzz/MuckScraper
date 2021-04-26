@@ -24,9 +24,18 @@ namespace MuckScraperMVCApp.Controllers
 
 
         [HttpPost]
-        public IActionResult Upload(Article article)
+        public async Task<IActionResult> Upload(Article article)
         {
-            GetArticle(article.SourceUrl).Wait();
+            ArticleJson retrievedArticle = await GetArticle(article.SourceUrl);
+
+            article.Title = retrievedArticle.title_1;
+            if (article.Title != retrievedArticle.title_2) { article.Subtitle = retrievedArticle.title_2; }
+            article.AuthorFirstName = retrievedArticle.author;
+            article.PublicationName = retrievedArticle.website_url;
+            if (retrievedArticle.date_published.HasValue) { article.PublishDate = retrievedArticle.date_published.Value; }
+            article.Content = retrievedArticle.content_1;
+            article.AddContent = retrievedArticle.content_2;
+
             if (ModelState.IsValid)
             {
                 repository.SaveArticle(article);
@@ -36,6 +45,7 @@ namespace MuckScraperMVCApp.Controllers
             {
                 return View();
             }
+
         }
 
         public IActionResult Completed(Article article)

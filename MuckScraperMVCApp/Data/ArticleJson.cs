@@ -10,7 +10,7 @@ namespace MuckScraperMVCApp.Data
         public string url { get; set; }
         public string? website_url { get; set; }
         public string? author { get; set; }
-        public string? date_published { get; set; }
+        public DateTime? date_published { get; set; }
         public string? lead_image_url { get; set; }
         public string? language { get; set; }
         public string? excerpt { get; set; }
