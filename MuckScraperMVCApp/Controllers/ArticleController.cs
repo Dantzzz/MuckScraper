@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MuckScraperMVCApp.Models;
+using System.Net.Http;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -19,9 +20,11 @@ namespace MuckScraperMVCApp.Controllers
             return View(new Article());
         }
 
+
         [HttpPost]
         public IActionResult Upload(Article article)
         {
+            GetArticle(article.SourceUrl).Wait();
             if (ModelState.IsValid)
             {
                 repository.SaveArticle(article);
@@ -37,6 +40,27 @@ namespace MuckScraperMVCApp.Controllers
         {
             Article createdArticle = repository.GetArticle(article.ArticleId);
             return View(createdArticle);
+        }
+
+        public async Task GetArticle(string urlString)
+        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(String.Format("https://news-parser1.p.rapidapi.com/article?url={0}", urlString)),
+                Headers =
+                {
+                    { "x-rapidapi-key", "70952da06amsh21fd2b056a6fd6dp1439c7jsn56b7c3d247b0" },
+                    { "x-rapidapi-host", "news-parser1.p.rapidapi.com" },
+                },
+            };
+            using (var response = await client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(body);
+            }
         }
     }
 }
