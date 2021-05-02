@@ -16,7 +16,7 @@ namespace MuckScraperMVCApp.Models
         public IQueryable<User> Users => context.Users;
 
         public IQueryable<Article> Articles => context.Articles;
-        public void SaveArticle(Article article)
+        public int SaveArticle(Article article)
         {
             if (article.ArticleId == 0)
             {
@@ -24,6 +24,8 @@ namespace MuckScraperMVCApp.Models
                 context.Articles.Add(article);
             }
             context.SaveChanges();
+            int newArticleId = article.ArticleId;
+            return newArticleId;
         }
         public Article GetArticle(int id)
         {

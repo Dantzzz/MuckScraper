@@ -5,10 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MuckScraperMVCApp.Models;
 using System.Net.Http;
-using System.Text.Json;
-using Newtonsoft.Json;
 using MuckScraperMVCApp.Data;
-using JsonSerializer = System.Text.Json.JsonSerializer;
+using System.Text.Json;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -34,14 +32,21 @@ namespace MuckScraperMVCApp.Controllers
             if (article.Title != retrievedArticle.title_2) { article.Subtitle = retrievedArticle.title_2; }
             article.AuthorName = retrievedArticle.author;
             article.PublicationName = retrievedArticle.website_url;
-            if (retrievedArticle.date_published.HasValue) { article.PublishDate = retrievedArticle.date_published.Value; }
+            if (retrievedArticle.date_published != null && retrievedArticle.date_published != "") 
+            {
+                DateTime dateValue;
+                if (DateTime.TryParse(retrievedArticle.date_published, out dateValue))
+                {
+                    article.PublishDate = dateValue;
+                }
+            }
             article.Content = retrievedArticle.content_1;
             article.AddContent = retrievedArticle.content_2;
 
             if (ModelState.IsValid)
             {
-                repository.SaveArticle(article);
-                return RedirectToAction("Completed", "Article", article);
+                int newArticle = repository.SaveArticle(article);
+                return RedirectToAction("Completed", "Article", new { ArticleId = newArticle });
             }
             else
             {
@@ -50,9 +55,9 @@ namespace MuckScraperMVCApp.Controllers
 
         }
 
-        public IActionResult Completed(Article article)
+        public IActionResult Completed(int ArticleId)
         {
-            Article createdArticle = repository.GetArticle(article.ArticleId);
+            Article createdArticle = repository.GetArticle(ArticleId);
             return View(createdArticle);
         }
 
