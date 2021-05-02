@@ -10,8 +10,8 @@ using MuckScraperMVCApp.Data;
 namespace MuckScraperMVCApp.Migrations
 {
     [DbContext(typeof(MuckScraperContext))]
-    [Migration("20210418204711_init")]
-    partial class init
+    [Migration("20210502033019_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,10 +28,13 @@ namespace MuckScraperMVCApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AuthorFirstName")
+                    b.Property<string>("AddContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AuthorLastName")
+                    b.Property<string>("AuthorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PublicationName")
@@ -46,10 +49,11 @@ namespace MuckScraperMVCApp.Migrations
                     b.Property<string>("SourceUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Subtitle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("datetime2");

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MuckScraperMVCApp.Migrations
 {
-    public partial class init : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,14 +13,16 @@ namespace MuckScraperMVCApp.Migrations
                 {
                     ArticleId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Subtitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SourceMedium = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AuthorFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AuthorLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthorName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SourceUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PublicationName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UploadDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PublishDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    PublishDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AddContent = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using MuckScraperMVCApp.Models;
 using System.Net.Http;
 using System.Text.Json;
+using Newtonsoft.Json;
 using MuckScraperMVCApp.Data;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -30,7 +32,7 @@ namespace MuckScraperMVCApp.Controllers
 
             article.Title = retrievedArticle.title_1;
             if (article.Title != retrievedArticle.title_2) { article.Subtitle = retrievedArticle.title_2; }
-            article.AuthorFirstName = retrievedArticle.author;
+            article.AuthorName = retrievedArticle.author;
             article.PublicationName = retrievedArticle.website_url;
             if (retrievedArticle.date_published.HasValue) { article.PublishDate = retrievedArticle.date_published.Value; }
             article.Content = retrievedArticle.content_1;
