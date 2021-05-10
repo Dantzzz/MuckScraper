@@ -79,7 +79,7 @@ namespace MuckScraperMVCApp.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                //Console.WriteLine(body);
 
                 articleJson = JsonSerializer.Deserialize<ArticleJson>(body);
             }
