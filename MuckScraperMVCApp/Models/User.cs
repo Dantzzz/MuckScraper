@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MuckScraperMVCApp.Models
@@ -23,5 +24,6 @@ namespace MuckScraperMVCApp.Models
         [DataType(DataType.EmailAddress)]
         public string PrimaryEmail { get; set; }
         
+        List<Article> articleLibrary { get; set; }
     }
 }
