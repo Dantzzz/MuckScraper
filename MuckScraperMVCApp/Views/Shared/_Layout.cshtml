@@ -22,27 +22,44 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MuckScraper</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg justify-content-between">
 
-                    </ul>
-                </div>
+            <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbar-list-9"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="align-content-md-center">MuckScraper</div>
+                <span class="navbar-toggler-icon"></span>
+                
+            </button>
+
+            
+            <div class="collapse navbar-collapse w-100 order-3 order-lg-1" id="navbar-list-9">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-action="Index">Muckscraper<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
             </div>
+            
+            <div class="collapse navbar-collapse justify-content-end w-100 order-3" id="navbar-list-9">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="avatar" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" asp-action="Index">Dashboard</a>
+                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <a class="dropdown-item" href="#">Log Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

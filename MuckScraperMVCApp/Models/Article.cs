@@ -24,5 +24,6 @@ namespace MuckScraperMVCApp.Models
         public DateTime PublishDate { get; set; }
         public string Content { get; set; }
         public string AddContent { get; set; }
+        public string Image { get; set; }
     }
 }

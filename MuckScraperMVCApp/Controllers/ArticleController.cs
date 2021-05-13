@@ -5,6 +5,7 @@ using MuckScraperMVCApp.Models;
 using System.Net.Http;
 using MuckScraperMVCApp.Data;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -39,6 +40,7 @@ namespace MuckScraperMVCApp.Controllers
             }
             article.Content = retrievedArticle.content_1;
             article.AddContent = retrievedArticle.content_2;
+            article.Image = retrievedArticle.lead_image_url;
 
             if (ModelState.IsValid)
             {
@@ -57,9 +59,9 @@ namespace MuckScraperMVCApp.Controllers
             Article createdArticle = repository.GetArticle(ArticleId);
             return View(createdArticle);
         }
-        public IActionResult Library(IArticleRepository repo)
+        public async Task<IActionResult> Library()
         {
-            return View(repo);
+            return View(await repository.Articles.ToListAsync());
         }
         public async Task<ArticleJson> GetArticle(string urlString)
         {
@@ -79,11 +81,40 @@ namespace MuckScraperMVCApp.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                //Console.WriteLine(body);
+                Console.WriteLine(body);
 
                 articleJson = JsonSerializer.Deserialize<ArticleJson>(body);
             }
             return articleJson;
         }
+
+        // GET: UserTasks/Delete/5
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var article = await repository.Articles
+        //        .FirstOrDefaultAsync(m => m.ArticleId == id);
+        //    if (article == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(article);
+        //}
+
+        //// POST: UserTasks/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var article = await repository.Articles.MinAsync(id);
+        //    repository.Articles.Remove(article);
+        //    await repository.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }
