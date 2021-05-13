@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MuckScraperMVCApp.Models;
 using System.Net.Http;
@@ -21,7 +19,6 @@ namespace MuckScraperMVCApp.Controllers
         {
             return View(new Article());
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Upload(Article article)
@@ -60,7 +57,10 @@ namespace MuckScraperMVCApp.Controllers
             Article createdArticle = repository.GetArticle(ArticleId);
             return View(createdArticle);
         }
-
+        public IActionResult Library(IArticleRepository repo)
+        {
+            return View(repo);
+        }
         public async Task<ArticleJson> GetArticle(string urlString)
         {
             var client = new HttpClient();
