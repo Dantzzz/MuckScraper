@@ -11,75 +11,77 @@
     <title>Library</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
-
     <link href="~/css/library.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" />
 </head>
-<body>
 
-    <main>
-        <section class="py-5 text-center container">
-            <div class="row py-s">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Library</h1>
-                    <p class="lead text-muted">View an archive of your uploaded news articles.</p>
-                    <p>
-                        <div class="text-md-center p-lg-5">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-                                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-                                </svg>
-                                Home
-                            </a>
-                            <a class="btn btn-primary" asp-controller="Home">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
-                                    <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z" />
-                                </svg>
-                                Categories
-                            </a>
-                            <a class="btn btn-primary" asp-controller="Home">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
-                                    <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z" />
-                                </svg>
-                                Trash
-                            </a>
-                        </div>
-                    </p>
+<body class="libbkgrnd">
+    <container>
+        <main>
+            <section class="py-5 text-center container">
+                <div class="row py-s">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">Library</h1>
+                        <p class="lead text-muted">View an archive of your uploaded news articles.</p>
+                        <p>
+                            <div class="text-md-center p-lg-5">
+                                <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                    </svg>
+                                    Home
+                                </a>
+                                <a class="btn btn-primary" asp-controller="Home">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-fill" viewBox="0 0 16 16">
+                                        <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z" />
+                                    </svg>
+                                    Categories
+                                </a>
+                                <a class="btn btn-primary" asp-controller="Home">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
+                                        <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z" />
+                                    </svg>
+                                    Trash
+                                </a>
+                            </div>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <div class="album py-5 bg-light">
-            <div class="container">
+            <div class="album py-5 bg-light">
+                <div class="container">
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                    @foreach (var item in Model)
-                    {
+                        @foreach (var item in Model)
+                        {
 
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <img src="@item.Image" alt="Alternate Text" />
-                                <div class="card-body">
-                                    <p class="card-text"> <strong>@Html.DisplayFor(modelItem => item.Title)</strong></p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a type="button" class="btn btn-sm btn-outline-secondary" href="@item.SourceUrl" target="_blank">View</a>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                            <a type="button" class="btn btn-sm btn-outline-secondary" asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img src="@item.Image" alt="Alternate Text" />
+                                    <div class="card-body">
+                                        <p class="card-text"> <strong>@Html.DisplayFor(modelItem => item.Title)</strong></p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a type="button" class="btn btn-sm btn-outline-secondary" href="@item.SourceUrl" target="_blank">View</a>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@item.ArticleId">Edit</button>
+                                                <a type="button" class="btn btn-sm btn-outline-secondary" asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>
+                                            </div>
+                                            <small class="text-muted">@($"{item.PublishDate: MM/dd/yyyy}")</small>
                                         </div>
-                                        <small class="text-muted">@($"{item.PublishDate: MM/dd/yyyy}")</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    }
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </container>
 
     <script src="~/js/library.js"></script>
 </body>
+    
 </html>

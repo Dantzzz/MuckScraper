@@ -79,3 +79,12 @@ body {
     background-image: url("/img/stockimg2.jpg");
     min-height: 100%;
 }
+
+.libbkgrnd {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/img/stockimg1.jpg");
+    min-height: 100%;
+}

@@ -74,9 +74,14 @@ namespace MuckScraperMVCApp.Controllers
             Article createdArticle = repository.GetArticle(ArticleId);
             return View(createdArticle);
         }
+
+        public IActionResult Edit(int ArticleId)
+        {
+            Article editArticle = repository.GetArticle(ArticleId);
+            return View(editArticle);
+        }
         public async Task<IActionResult> Library()
         {
-            
             return View(await repository.Articles.ToListAsync());
         }
         public async Task<ArticleJson> GetArticle(string urlString)
@@ -104,7 +109,6 @@ namespace MuckScraperMVCApp.Controllers
             return articleJson;
         }
 
-        //GET: UserTasks/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -122,7 +126,6 @@ namespace MuckScraperMVCApp.Controllers
             return View(article);
         }
 
-        // POST: UserTasks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

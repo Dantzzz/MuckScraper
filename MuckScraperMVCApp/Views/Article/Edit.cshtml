@@ -1,0 +1,76 @@
+﻿@model MuckScraperMVCApp.Models.Article
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<h1>Edit Article</h1>
+<hr />
+<div class="">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ArticleId" />
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Subtitle" class="control-label"></label>
+                <input asp-for="Subtitle" class="form-control" />
+                <span asp-validation-for="Subtitle" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SourceMedium" class="control-label"> Medium </label>
+                <input asp-for="SourceMedium" class="form-control" />
+                <span asp-validation-for="SourceMedium" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AuthorName" class="control-label">Author</label>
+                <input asp-for="AuthorName" class="form-control" />
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SourceUrl" class="control-label">URL</label>
+                <input asp-for="SourceUrl" class="form-control" />
+                <span asp-validation-for="SourceUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublicationName" class="control-label">Publication</label>
+                <input asp-for="PublicationName" class="form-control" />
+                <span asp-validation-for="PublicationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UploadDate" class="control-label">Upload Date</label>
+                <input asp-for="UploadDate" class="form-control" />
+                <span asp-validation-for="UploadDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublishDate" class="control-label">Publication Date</label>
+                <input asp-for="PublishDate" class="form-control" />
+                <span asp-validation-for="PublishDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Library">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
