@@ -32,6 +32,7 @@ namespace MuckScraperMVCApp
                 Configuration["ConnectionStrings:MuckScraperConnectionString"]);
             });
             services.AddScoped<IArticleRepository, EFMuckScraperRepository>();
+            services.AddIdentity<User, UserRoles>(opt => opt.User.RequireUniqueEmail = true).AddEntityFrameworkStores<MuckScraperContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +54,8 @@ namespace MuckScraperMVCApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

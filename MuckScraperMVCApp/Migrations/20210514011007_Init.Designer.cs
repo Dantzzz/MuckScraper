@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MuckScraperMVCApp.Data;
 
 namespace MuckScraperMVCApp.Migrations
 {
     [DbContext(typeof(MuckScraperContext))]
-    partial class MuckScraperContextModelSnapshot : ModelSnapshot
+    [Migration("20210514011007_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,9 +147,6 @@ namespace MuckScraperMVCApp.Migrations
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("RequestId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SourceMedium")
                         .HasColumnType("nvarchar(max)");
 
@@ -218,12 +217,6 @@ namespace MuckScraperMVCApp.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -247,9 +240,6 @@ namespace MuckScraperMVCApp.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ProfilePhoto")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
@@ -262,6 +252,15 @@ namespace MuckScraperMVCApp.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("firstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("lastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("profilePhoto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

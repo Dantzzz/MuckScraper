@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MuckScraperMVCApp.Models;
 
 namespace MuckScraperMVCApp.Data
 {
-    public class MuckScraperContext : DbContext
+    public class MuckScraperContext : IdentityDbContext<User, UserRoles, int>
     {
         public MuckScraperContext(DbContextOptions<MuckScraperContext> options)
         : base(options) { }

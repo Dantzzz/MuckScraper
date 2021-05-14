@@ -7,6 +7,8 @@ namespace MuckScraperMVCApp.Models
     {
         [Key]
         public int ArticleId { get; set; }
+        
+        public int RequestId { get; set; }
 
         public string Title { get; set; }
         public string Subtitle { get; set; }

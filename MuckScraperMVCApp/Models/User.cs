@@ -5,26 +5,12 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MuckScraperMVCApp.Models
 {
-    public class User
+    public class User : IdentityUser<int>
     {
-        [Key]
-        public int UserId { get; set; }
-
-        [Required]
-        public string Username { get; set; }
-
-        [Required]
-        public string Password { get; set; }
-
         public DateTime RegistrationDate { get; set; }
-
-        public DateTime LastLoginDate { get; set; }
-
-        public byte Credentials { get; set; }
-
-        [DataType(DataType.EmailAddress)]
-        public string PrimaryEmail { get; set; }
-        
-        List<Article> articleLibrary { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string? ProfilePhoto { get; set; }
+        ICollection<Article> Library { get; set;}
     }
 }

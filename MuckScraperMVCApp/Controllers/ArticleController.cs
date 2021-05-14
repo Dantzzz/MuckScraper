@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Linq;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace MuckScraperMVCApp.Controllers
 {
@@ -15,10 +16,14 @@ namespace MuckScraperMVCApp.Controllers
     {
         private readonly MuckScraperContext _context;
         IArticleRepository repository;
-        public ArticleController(IArticleRepository repoService, MuckScraperContext context)
+        private UserManager<User> _userManager;
+        private SignInManager<User> _signInManager;
+        public ArticleController(IArticleRepository repoService, MuckScraperContext context, UserManager<User> user, SignInManager<User> signin)
         {
             repository = repoService;
             _context = context;
+            _userManager = user;
+            _signInManager = signin;
         }
         public IActionResult Upload()
         {
@@ -30,6 +35,7 @@ namespace MuckScraperMVCApp.Controllers
         {
             ArticleJson retrievedArticle = await GetArticle(article.SourceUrl);
 
+            article.RequestId = Int32.Parse(_userManager.GetUserId(User));
             article.Title = retrievedArticle.title_1;
             if (article.Title != retrievedArticle.title_2) { article.Subtitle = retrievedArticle.title_2; }
             article.AuthorName = retrievedArticle.author;
@@ -65,6 +71,7 @@ namespace MuckScraperMVCApp.Controllers
         }
         public async Task<IActionResult> Library()
         {
+            
             return View(await repository.Articles.ToListAsync());
         }
         public async Task<ArticleJson> GetArticle(string urlString)
