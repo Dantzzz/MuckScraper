@@ -5,16 +5,20 @@ using MuckScraperMVCApp.Models;
 using System.Net.Http;
 using MuckScraperMVCApp.Data;
 using System.Text.Json;
+using System.Linq;
+using System.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace MuckScraperMVCApp.Controllers
 {
     public class ArticleController : Controller
     {
+        private readonly MuckScraperContext _context;
         IArticleRepository repository;
-        public ArticleController(IArticleRepository repoService)
+        public ArticleController(IArticleRepository repoService, MuckScraperContext context)
         {
             repository = repoService;
+            _context = context;
         }
         public IActionResult Upload()
         {
@@ -81,40 +85,41 @@ namespace MuckScraperMVCApp.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                //Console.WriteLine(body);
 
                 articleJson = JsonSerializer.Deserialize<ArticleJson>(body);
             }
             return articleJson;
         }
 
-        // GET: UserTasks/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        //GET: UserTasks/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var article = await repository.Articles
-        //        .FirstOrDefaultAsync(m => m.ArticleId == id);
-        //    if (article == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var article = await _context.Articles
+                .FirstOrDefaultAsync(m => m.ArticleId == id);
+            if (article == null)
+            {
+                return NotFound();
+            }
+            
+            return View(article);
+        }
 
-        //    return View(article);
-        //}
+        // POST: UserTasks/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var article = await _context.Articles.FindAsync(id);
+            _context.Articles.Remove(article);
+            await _context.SaveChangesAsync();
 
-        //// POST: UserTasks/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    var article = await repository.Articles.MinAsync(id);
-        //    repository.Articles.Remove(article);
-        //    await repository.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            return RedirectToAction("Library", "Article");
+        }
     }
 }
