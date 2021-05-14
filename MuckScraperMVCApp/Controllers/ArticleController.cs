@@ -33,6 +33,11 @@ namespace MuckScraperMVCApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Upload(Article article)
         {
+            if(_userManager.GetUserId(User) == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             ArticleJson retrievedArticle = await GetArticle(article.SourceUrl);
 
             article.RequestId = Int32.Parse(_userManager.GetUserId(User));
