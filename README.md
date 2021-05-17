@@ -98,21 +98,21 @@ Given a user, the article will need to require user to log in to access profile.
 
 |Req ID|Requirement|Test Method|
 |----|------------------------|---------|
-|1.| The system shall download an alias of the article that is presented for later view.| test |
-|1.i.| The system shall accept a news article as input and copy its text intelligently into a neatly formatted file held in storage.| test |
-|1.i.a.| The system shall employ web scraping functionality that will allow it to parse a webpage and identify key elements that distinguish text from html.| demonstrate |
-|1.i.b.| The system shall strip away extraneous html tags, salvaging only pertinent material from webpage.| demonstrate |
-|1.i.c.| The system shall store saved text into a new file saved to the user's account. | test |
-|1.ii| The system shall offer a user-friendly interface for viewing article aliases that have been saved. | demonstrate |
+|1.| The system shall pull applicable information from article to populate object fields. | test |
+|1.i.| The system shall accept a url and generate a news article object. | test |
+|1.i.a.| The system shall make API call based on user url input. | demonstrate |
+|1.i.b.| The system shall be capable of generating its own fields from API return. | test |
+|1.i.c.| The system shall store article objects to a user's personal library. | test |
+|1.ii.| The system can create users and allow them to manage and interact with their data. | test |
+|1.ii.a| The system allows users to register and log in to application. | test |
+|1.ii.b| The system shall only allow registered users to view their own libraries. | test |
+|1.ii.c| The system shall allow user's to create, read, edit and delete articles to and from library. | test |
+|1.iii.| The system shall offer a user-friendly interface with consistent pages. | demonstrate |
 |2.| The system shall monitor user habits.| analysis |
-|2.i| The system shall also intelligently identify certain aspects in a news article and keep track of its history in a historical database.| test |
-|2.i.a|The system shall extrapolate key characteristics of a news article, such as author, publication, and date, and log instances of this data in a database.| test |
-|2.i.b.| The system shall update database with new values and recognize values that have already been seen by comparing it to other values in the database.| test |
-|2.i.b.a| The system shall increment data that already exists in database with every subsequent instance.| test |
-|2.ii.| The system shall display a front-end interface to the user which consists of various statistics that reflect reading habits.| demonstrate |
-|2.ii.a| The system shall display user data in its most recent state. | test |
-|2.ii.a.a.| The system shall provide means to update program with an accurate view of the current state of data in the database.| test |
-|2.ii.b.| The system shall make calculations on user data that reflects the user's habits and display these figures to the user. | test |
+|2.i.| The system shall be capable of recognizing values already seen by comparing them to other values in the database.| test |
+|2.ii.a| The system shall display a front-end interface to the user which consists of various statistics that reflect reading habits.| demonstrate |
+|2.ii.b| The system shall display user data in its most recent state. | test |
+|2.ii.c.| The system shall make calculations on user data that reflects the user's habits and display these figures to the user. | test |
 |3.| The system shall include functionality that emphasizes a journalist's credentials.| demonstrate |
 |3.i.| The system will recognize journalists by name and display a wiki for the user to learn more about the journalist's background and reputation.| test |
 |3.i.a.| The system will extrapolate the author's name while parsing through an article's contents.| test |
@@ -125,10 +125,13 @@ Given a user, the article will need to require user to log in to access profile.
 ## Testing
 |TestID|Req ID|Test Process|Status|Timestamp|Build/Version|
 |----|----|-------------|------------|-------|----------|
-|001|1.|View article autonomous of source.| not tested |
-|002|1.i.| Plug in article and view output. Output must be separate from source and remain somewhat true to original styling.| not tested |||
-|003|1.i.a, b, & c| Appropriate HTML tags interpretted and stripped from plain text output and stored in separate file. | not tested |||
-|004|1.ii.| Allow audience to demo UI to determine if application is visually stimulating.| not tested |||
+|001|1.i.| System takes user input, calls API, stores applicable info to an object, and stores object to library. | tested |||
+|002|1.ii.a| System allows users to register and log in. | tested |||
+|003|1.ii.b| Users can only view their own libraries.| not tested |||
+|004|1.ii.c| System allows users to perform CRUD operations on their libraries.| In progress |||
+|005|1.iii.| System displays user friendly interface | demonstrated |||
+|006|2.| System monitors user's habits.| not implemented |||
+|007|3.| System emphasizes a journalist's credentials. | not implemented |||
 
 [Back To Top](#toc)
 
